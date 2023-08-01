@@ -9,6 +9,21 @@ NC='\033[0m' # No Color
 # print header
 echo -e "${YELLOW}Docker Backupsystem${NC}"
 
+
+# check for update using git pull
+echo -e "${YELLOW}Checking for updates...${NC}"
+git pull
+# if there was an update, say updated
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}Updated! ✔${NC}"
+    # exit the script, and restart it
+    echo -e "${YELLOW}Restarting...${NC}"
+    exec "$0"
+else
+    echo -e "${GREEN}Up to date. ✔${NC}"
+fi
+
+
 # delete previous deployment
 echo -e "${YELLOW}Deleting previous deployment...${NC}"
 rm -rf deployment
