@@ -1,0 +1,10 @@
+version: '3'
+services:
+  backupsystem-deployment:
+    env_file:
+      - .env
+    build: .
+    container_name: backupsystem-deployment
+    restart: "no"
+    volumes:
+      - ./deployment:/deployment
