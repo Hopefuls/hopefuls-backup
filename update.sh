@@ -19,8 +19,10 @@ if [ $? -eq 0 ]; then
     # exit the script, and restart it
     echo -e "${YELLOW}Restarting...${NC}"
     exec "$0"
-else
+elif [ $? -eq 1 ]; then
     echo -e "${GREEN}Up to date. ✔${NC}"
+else
+    echo -e "${RED}Error checking for updates. ✘${NC}"
 fi
 
 
