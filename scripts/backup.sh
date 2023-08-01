@@ -1,7 +1,7 @@
 # copyright hopefuls.de 2023
 
 backup_folder="/opt/backups"
-data_folder="/home/testfolder"
+data_folder="/home/docker"
 
 # loop through the folders in the /home directory, print them each out, only do this to the first 3 folders
 
